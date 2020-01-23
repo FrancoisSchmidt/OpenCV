@@ -1,5 +1,6 @@
 package org.opencv.android;
 
+import java.io.FileNotFoundException;
 import java.util.List;
 
 import org.opencv.BuildConfig;
@@ -133,7 +134,7 @@ public abstract class CameraBridgeViewBase extends SurfaceView implements Surfac
          * The returned values - is a modified frame which needs to be displayed on the screen.
          * TODO: pass the parameters specifying the format of the frame (BPP, YUV or RGB and etc)
          */
-        public Mat onCameraFrame(CvCameraViewFrame inputFrame);
+        public Mat onCameraFrame(CvCameraViewFrame inputFrame) throws FileNotFoundException;
     };
 
     protected class CvCameraViewListenerAdapter implements CvCameraViewListener2  {
@@ -385,7 +386,7 @@ public abstract class CameraBridgeViewBase extends SurfaceView implements Surfac
      * then displayed on the screen.
      * @param frame - the current frame to be delivered
      */
-    protected void deliverAndDrawFrame(CvCameraViewFrame frame) {
+    protected void deliverAndDrawFrame(CvCameraViewFrame frame) throws FileNotFoundException {
         Mat modified;
 
         if (mListener != null) {

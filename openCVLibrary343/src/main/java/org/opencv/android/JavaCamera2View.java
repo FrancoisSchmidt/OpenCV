@@ -1,5 +1,6 @@
 package org.opencv.android;
 
+import java.io.FileNotFoundException;
 import java.nio.ByteBuffer;
 import java.util.Arrays;
 
@@ -183,7 +184,11 @@ public class JavaCamera2View extends CameraBridgeViewBase {
                     Mat y_mat = new Mat(h, w, CvType.CV_8UC1, y_plane);
                     Mat uv_mat = new Mat(h / 2, w / 2, CvType.CV_8UC2, uv_plane);
                     JavaCamera2Frame tempFrame = new JavaCamera2Frame(y_mat, uv_mat, w, h);
-                    deliverAndDrawFrame(tempFrame);
+                    try {
+                        deliverAndDrawFrame(tempFrame);
+                    } catch (FileNotFoundException e) {
+                        e.printStackTrace();
+                    }
                     tempFrame.release();
                     image.close();
                 }
