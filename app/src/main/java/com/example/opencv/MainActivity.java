@@ -196,8 +196,6 @@ public class MainActivity extends Activity implements OnTouchListener, CvCameraV
             xCenter = (bananasArray[i].x + bananasArray[i].width + bananasArray[i].x) / 2;
             yCenter = (bananasArray[i].y + bananasArray[i].height + bananasArray[i].y) / 2;
         }
-
         return mRgba;
     }
-
 }
