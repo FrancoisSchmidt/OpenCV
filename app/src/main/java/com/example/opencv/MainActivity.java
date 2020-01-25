@@ -41,7 +41,6 @@ public class MainActivity extends Activity implements CameraBridgeViewBase.CvCam
     };
 
     private void initializeOpenCVDependencies() {
-
         try {
             // Copy the resource into a temp file so OpenCV can load it
             InputStream is = getResources().openRawResource(R.raw.haarcascade_frontalface_alt2);
@@ -120,5 +119,4 @@ public class MainActivity extends Activity implements CameraBridgeViewBase.CvCam
             mLoaderCallback.onManagerConnected(LoaderCallbackInterface.SUCCESS);
         }
     }
-
 }
