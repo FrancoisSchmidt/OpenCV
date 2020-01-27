@@ -121,4 +121,5 @@ public class MainActivity extends Activity implements CameraBridgeViewBase.CvCam
             mLoaderCallback.onManagerConnected(LoaderCallbackInterface.SUCCESS);
         }
     }
+
 }
