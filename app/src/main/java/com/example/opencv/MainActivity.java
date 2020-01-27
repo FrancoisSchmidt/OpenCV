@@ -18,6 +18,7 @@ import org.opencv.imgproc.Imgproc;
 import org.opencv.objdetect.CascadeClassifier;
 import android.app.Activity;
 import android.content.Context;
+import android.content.pm.ActivityInfo;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.WindowManager;
@@ -76,6 +77,7 @@ public class MainActivity extends Activity implements CameraBridgeViewBase.CvCam
         openCvCameraView = new JavaCameraView(this, -1);
         setContentView(openCvCameraView);
         openCvCameraView.setCvCameraViewListener(this);
+        setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_LANDSCAPE);
     }
 
     @Override
